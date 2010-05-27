@@ -93,32 +93,6 @@
 
 
   
-    <h2>Class Method Summary</h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#registered-class_method" title="registered (class method)">+ (Object) <strong>registered</strong>(app) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-    </ul>
-  
     <h2>Instance Method Summary</h2>
 
     <ul class="summary">
@@ -335,52 +309,6 @@ Returns an array of pairs i.e.
 
 
 
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-    
-    
-      <div class="method_details first">
-  <p class="signature first" id="registered-class_method">
-  
-    + (<tt><a href="../Object.html" title="Object (class)">Object</a></tt>) <strong>registered</strong>(app) 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 12</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_year_loffset</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>60</span> 
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_year_uoffset</span><span class='comma'>,</span> <span class='int'>0</span>
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_month_names</span><span class='comma'>,</span> <span class='const'>Date</span><span class='op'>::</span><span class='const'>MONTHNAMES</span>
-
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_currency_unit</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>$</span><span class='tstring_end'>'</span></span>
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_currency_precision</span><span class='comma'>,</span> <span class='int'>2</span>
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:default_currency_separator</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
     
@@ -445,12 +373,12 @@ the array of name, code pairs.
       <pre class="lines">
 
 
-36
-37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id country_choices'>country_choices</span>
   <span class='const'>Country</span><span class='period'>.</span><span class='id to_select'>to_select</span>
@@ -640,8 +568,6 @@ if given nil or an empty string.
       <pre class="lines">
 
 
-209
-210
 211
 212
 213
@@ -651,10 +577,12 @@ if given nil or an empty string.
 217
 218
 219
-220</pre>
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 209</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id currency'>currency</span><span class='lparen'>(</span><span class='id number'>number</span><span class='comma'>,</span> <span class='id opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id number'>number</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id empty?'>empty?</span>
@@ -730,13 +658,13 @@ the array of day, day pairs.
       <pre class="lines">
 
 
-48
-49
 50
-51</pre>
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id day_choices'>day_choices</span>
   <span class='id days'>days</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>31</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_a'>to_a</span>
@@ -889,8 +817,6 @@ an object responding to #on.
       <pre class="lines">
 
 
-159
-160
 161
 162
 163
@@ -905,10 +831,12 @@ an object responding to #on.
 172
 173
 174
-175</pre>
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 161</span>
 
 <span class='kw'>def</span> <span class='id errors_on'>errors_on</span><span class='lparen'>(</span><span class='id object'>object</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:class</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>errors</span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id object'>object</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id empty?'>empty?</span>
@@ -956,12 +884,12 @@ Returns an HTML sanitized string.
       <pre class="lines">
 
 
-23
-24
-25</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id h'>h</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span>
   <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Utils</span><span class='period'>.</span><span class='id escape_html'>escape_html</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span>
@@ -1056,14 +984,14 @@ the array of month name, month pairs.
       <pre class="lines">
 
 
-64
-65
 66
 67
-68</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id month_choices'>month_choices</span><span class='lparen'>(</span><span class='id month_names'>month_names</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_month_names'>default_month_names</span><span class='rparen'>)</span>
   <span class='id month_names'>month_names</span><span class='period'>.</span><span class='id map'>map</span><span class='period'>.</span>
@@ -1182,15 +1110,15 @@ given a nil value or an empty string.
       <pre class="lines">
 
 
-232
-233
 234
 235
 236
-237</pre>
+237
+238
+239</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 234</span>
 
 <span class='kw'>def</span> <span class='id percentage'>percentage</span><span class='lparen'>(</span><span class='id number'>number</span><span class='comma'>,</span> <span class='id precision'>precision</span> <span class='op'>=</span> <span class='int'>2</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id number'>number</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id empty?'>empty?</span>
@@ -1302,16 +1230,16 @@ a default prompt to place at the beginning of the list.
       <pre class="lines">
 
 
-120
-121
 122
 123
 124
 125
-126</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id select_options'>select_options</span><span class='lparen'>(</span><span class='id pairs'>pairs</span><span class='comma'>,</span> <span class='id current'>current</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id prompt'>prompt</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id pairs'>pairs</span><span class='period'>.</span><span class='id unshift'>unshift</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id prompt'>prompt</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id prompt'>prompt</span>
@@ -1448,13 +1376,13 @@ the array of year, year pairs.
       <pre class="lines">
 
 
-98
-99
 100
-101</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/helpers.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id year_choices'>year_choices</span><span class='lparen'>(</span><span class='id loffset'>loffset</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_year_loffset'>default_year_loffset</span><span class='comma'>,</span> <span class='id uoffset'>uoffset</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_year_uoffset'>default_year_uoffset</span><span class='rparen'>)</span>
   <span class='id years'>years</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='const'>Date</span><span class='period'>.</span><span class='id today'>today</span><span class='period'>.</span><span class='id year'>year</span> <span class='op'>+</span> <span class='id loffset'>loffset</span><span class='rparen'>)</span><span class='op'>..</span><span class='lparen'>(</span><span class='const'>Date</span><span class='period'>.</span><span class='id today'>today</span><span class='period'>.</span><span class='id year'>year</span> <span class='op'>+</span> <span class='id uoffset'>uoffset</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_a'>to_a</span>
@@ -1470,7 +1398,7 @@ the array of year, year pairs.
 </div>
     
     <div id="footer">
-  Generated on Thu May 27 18:59:12 2010 by 
+  Generated on Thu May 27 19:36:08 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.4 (ruby-1.9.1).
 </div>
