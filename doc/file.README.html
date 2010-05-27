@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.5.4</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h2>Sinatra Helpers: a common collection of useful utilities</h2>
+
+<p>Bare minimum, close to the metal helpers for your average sinatra application.</p>
+
+<h2>Defines...</h2>
+
+<pre class="code"><span class='comment'># from a Sinatra context point of view...
+</span><span class='id set'>set</span> <span class='symbol'>:default_year_loffset</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>60</span> 
+<span class='id set'>set</span> <span class='symbol'>:default_year_uoffset</span><span class='comma'>,</span> <span class='int'>0</span>
+<span class='id set'>set</span> <span class='symbol'>:default_month_names</span><span class='comma'>,</span> <span class='const'>Date</span><span class='op'>::</span><span class='const'>MONTHNAMES</span>
+
+<span class='id set'>set</span> <span class='symbol'>:default_currency_unit</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>$</span><span class='tstring_end'>'</span></span>
+<span class='id set'>set</span> <span class='symbol'>:default_currency_precision</span><span class='comma'>,</span> <span class='int'>2</span>
+<span class='id set'>set</span> <span class='symbol'>:default_currency_separator</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span>
+</pre>
+
+<h2>Examples</h2>
+
+<pre class="code"># what are helpers for if you don't have `h` ^_^
+=h &quot;&lt;Bar&gt;&quot;
+
+%select(name='country')
+  != country_choices
+
+%select(name='birthday[month'])
+  != month_choices
+
+%select(name='birthday[day]')
+  != day_choices
+
+%select(name='birthday[year'])
+  != year_choices
+
+%select(name=&quot;categories&quot;)
+  != select_options [['First', 1], ['Second', 2]]
+
+= currency(100)
+-# displays $ 100.00
+
+= percentage(100)
+-# displays 100.00%
+
+# If you have an ohm model which you want to present the errors of:
+# (this is taken from the reddit-clone courtesy of citrusbyte)
+
+# This should be put in your HAML file
+
+- errors_on @user do |e|
+  - e.on [:email, :not_present] &quot;You must supply an email address&quot;
+  - e.on [:password, :not_present] &quot;A password is required&quot;
+  - e.on [:password, :not_confirmed] &quot;You must confirm your password&quot;
+</pre>
+
+<h3>Copyright</h3>
+
+<p>Copyright (c) 2010 Cyril David. See LICENSE for details.</p></div></div>
+    
+    <div id="footer">
+  Generated on Thu May 27 18:59:11 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.4 (ruby-1.9.1).
+</div>
+
+  </body>
+</html>
